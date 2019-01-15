@@ -275,7 +275,7 @@
                         context.triggerEvent('dialog.shown');
 
                         // Cloning AudioInput to clear element.
-                        $audioInput.replaceWith($audioInput.clone().on('change', (event) => {
+                        $audioInput.replaceWith($audioInput.clone().on('change', function(event) {
                             deferred.resolve(event.target.files || event.target.value);
                         }).val(''));
 
@@ -284,8 +284,8 @@
                             deferred.resolve($audioUrl.val());
                         });
 
-                        $audioUrl.on('keyup paste', () => {
-                            const url = $audioUrl.val();
+                        $audioUrl.on('keyup paste', function() {
+                            var url = $audioUrl.val();
                             ui.toggleBtn($audioBtn, url);
                         }).val('');
 
