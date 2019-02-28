@@ -94,7 +94,7 @@
                 // get the correct container for the plugin how it's attached to the document DOM.
                 var $container = options.dialogsInBody ? $(document.body) : $editor;
 
-                let audioLimitation = '';
+                var audioLimitation = '';
                 if (options.maximumAudioFileSize) {
                     var unit = Math.floor(Math.log(options.maximumAudioFileSize) / Math.log(1024));
                     var readableSize = (options.maximumAudioFileSize / Math.pow(1024, unit)).toFixed(2) * 1 +
